@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-07-17 23:11:44
- * @LastEditTime: 2019-07-29 23:40:30
+ * @LastEditTime: 2019-07-29 23:41:44
  * @LastEditors: Please set LastEditors
  */
 export type Method =
