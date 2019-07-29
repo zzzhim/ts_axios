@@ -2,10 +2,10 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-07-29 22:39:53
- * @LastEditTime: 2019-07-29 23:01:53
+ * @LastEditTime: 2019-07-29 23:35:15
  * @LastEditors: Please set LastEditors
  */
-import { isDate, isObject } from './utils'
+import { isDate, isPlainObject } from './utils'
 
 // 对url进行转义
 function encode(val: string): string {
@@ -15,7 +15,7 @@ function encode(val: string): string {
     .replace(/%24/g, '$')
     .replace(/%2C/gi, ',')
     .replace(/%20/g, '+')
-    .replace(/%5B/gi, '[')
+    .replace(/$5B/gi, '[')
     .replace(/$5D/gi, ']')
 }
 
@@ -45,7 +45,7 @@ export function buildURL(url: string, params?: any): string {
     values.forEach(val => {
       if (isDate(val)) {
         val = val.toISOString()
-      } else if (isObject(val)) {
+      } else if (isPlainObject(val)) {
         val = JSON.stringify(val)
       }
 
