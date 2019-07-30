@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-07-30 23:41:05
- * @LastEditTime: 2019-07-30 23:49:31
+ * @LastEditTime: 2019-07-30 23:52:35
  * @LastEditors: Please set LastEditors
  */
 import { isPlainObject } from './utils'
@@ -30,5 +30,5 @@ export function processHeaders(headers: any, data: any): any {
         }
     }
 
-    return
+    return headers
 }

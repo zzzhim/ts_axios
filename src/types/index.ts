@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-07-17 23:11:44
- * @LastEditTime: 2019-07-30 00:02:55
+ * @LastEditTime: 2019-07-30 23:52:57
  * @LastEditors: Please set LastEditors
  */
 export type Method =
@@ -24,7 +24,7 @@ export type Method =
 export interface AxiosRequestConfig {
     url: string
     method?: Method
-    // headers?: any
     data?: any
     params?: any
+    headers?: any
 }
