@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-07-17 23:11:44
- * @LastEditTime: 2019-07-30 23:52:57
+ * @LastEditTime: 2019-07-31 22:33:29
  * @LastEditors: Please set LastEditors
  */
 export type Method =
@@ -27,4 +27,16 @@ export interface AxiosRequestConfig {
     data?: any
     params?: any
     headers?: any
+    responseType?: XMLHttpRequestResponseType
 }
+
+export interface AxiosResponse {
+    data: any
+    status: number
+    statusText: string
+    headers: any
+    config: AxiosRequestConfig
+    request: any
+}
+
+export interface AxiosPromise extends Promise<AxiosResponse> {}
