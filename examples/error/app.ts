@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-07-29 00:33:08
+ * @LastEditTime: 2019-07-31 23:50:13
+ * @LastEditors: Please set LastEditors
+ */
 import axios, { AxiosError } from '../../src/index'
 
 axios({
