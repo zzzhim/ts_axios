@@ -2,11 +2,12 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-07-17 23:31:14
- * @LastEditTime: 2019-07-31 22:28:40
+ * @LastEditTime: 2019-07-31 22:52:13
  * @LastEditors: Please set LastEditors
  */
 
 import { AxiosRequestConfig, AxiosPromise, AxiosResponse } from './types'
+import { parseHeaders } from './helpers/headers'
 
 export default function xhr(config: AxiosRequestConfig): AxiosPromise {
     return new Promise((resolve, reject) => {
@@ -25,7 +26,7 @@ export default function xhr(config: AxiosRequestConfig): AxiosPromise {
                 return
             }
 
-            const responseHeaders = request.getAllResponseHeaders()
+            const responseHeaders = parseHeaders(request.getAllResponseHeaders())
             const responseData = responseType !== 'text' ? request.response : request.responseText
 
             const response: AxiosResponse = {
