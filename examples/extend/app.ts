@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-07-29 00:33:08
- * @LastEditTime: 2019-08-04 23:48:44
+ * @LastEditTime: 2019-08-05 00:01:15
  * @LastEditors: Please set LastEditors
  */
 import axios from '../../src/index'
@@ -52,29 +52,29 @@ import axios from '../../src/index'
 //   }
 // })
 
-// interface ResponseData<T = any> {
-//   code: number
-//   result: T
-//   message: string
-// }
+interface ResponseData<T = any> {
+  code: number
+  result: T
+  message: string
+}
 
-// interface User {
-//   name: string
-//   age: number
-// }
+interface User {
+  name: string
+  age: number
+}
 
-// function getUser<T>() {
-//   return axios<ResponseData<T>>('/extend/user')
-//     .then(res => res.data)
-//     .catch(err => console.error(err))
-// }
+function getUser<T>() {
+  return axios<ResponseData<T>>('/extend/user')
+    .then(res => res.data)
+    .catch(err => console.error(err))
+}
 
 
-// async function test() {
-//   const user = await getUser<User>()
-//   if (user) {
-//     console.log(user.result.name)
-//   }
-// }
+async function test() {
+  const user = await getUser<User>()
+  if (user) {
+    console.log(user.result.name)
+  }
+}
 
-// test()
+test()
