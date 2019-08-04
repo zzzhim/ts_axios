@@ -2,13 +2,13 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-07-17 23:31:14
- * @LastEditTime: 2019-07-31 23:47:19
+ * @LastEditTime: 2019-08-04 23:17:29
  * @LastEditors: Please set LastEditors
  */
 
-import { AxiosRequestConfig, AxiosPromise, AxiosResponse } from './types'
-import { parseHeaders } from './helpers/headers'
-import { createError } from './helpers/error'
+import { AxiosRequestConfig, AxiosPromise, AxiosResponse } from '../types'
+import { parseHeaders } from '../helpers/headers'
+import { createError } from '../helpers/error'
 
 export default function xhr(config: AxiosRequestConfig): AxiosPromise {
     return new Promise((resolve, reject) => {
@@ -24,7 +24,7 @@ export default function xhr(config: AxiosRequestConfig): AxiosPromise {
             request.timeout = timeout
         }
 
-        request.open(method.toUpperCase(), url, true)
+        request.open(method.toUpperCase(), url!, true)
 
         Object.keys(headers).forEach(name => {
             if (data === null && name.toLowerCase() === 'content-type') {
