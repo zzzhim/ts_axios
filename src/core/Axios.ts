@@ -2,14 +2,23 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-04 22:58:11
- * @LastEditTime: 2019-08-04 23:26:30
+ * @LastEditTime: 2019-08-04 23:47:12
  * @LastEditors: Please set LastEditors
  */
 import { AxiosRequestConfig, AxiosPromise, Method } from '../types'
 import dispatchRequest from './dispatchRequest'
 
 export default class Axios {
-    request(config: AxiosRequestConfig): AxiosPromise {
+    request(url: any, config?: any): AxiosPromise {
+        if (typeof url === 'string') {
+            if (!config) {
+                config = {}
+            }
+            config.url = url
+        } else {
+            config = url
+        }
+
         return dispatchRequest(config)
     }
 
