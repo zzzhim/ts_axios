@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-07-29 00:33:08
+ * @LastEditTime: 2019-08-05 23:37:47
+ * @LastEditors: Please set LastEditors
+ */
 import axios from '../../src/index'
 
 axios.interceptors.request.use(config => {
@@ -36,4 +43,6 @@ axios({
   }
 }).then((res) => {
   console.log(res.data)
+}).catch(() => {
+    // no thing
 })

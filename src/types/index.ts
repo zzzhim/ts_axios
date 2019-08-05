@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-07-17 23:11:44
- * @LastEditTime: 2019-08-04 23:55:47
+ * @LastEditTime: 2019-08-05 23:34:41
  * @LastEditors: Please set LastEditors
  */
 export type Method =
@@ -51,6 +51,11 @@ export interface AxiosError extends Error {
 }
 
 export interface Axios {
+    interceptors: {
+        request: AxiosInterceptorManager<AxiosRequestConfig>
+        response: AxiosInterceptorManager<AxiosResponse>
+    }
+
     request<T = any>(config: AxiosRequestConfig): AxiosPromise<T>
 
     get<T = any>(url: string, config?: AxiosRequestConfig): AxiosPromise<T>
@@ -72,4 +77,18 @@ export interface AxiosInstance extends Axios {
     <T = any>(config: AxiosRequestConfig): AxiosPromise<T>
 
     <T = any>(urL: string, config?: AxiosRequestConfig): AxiosPromise<T>
+}
+
+export interface AxiosInterceptorManager<T> {
+    use(resolved: ResolvedFn<T>, rejected?: RejectedFn): number
+
+    eject(id: number): void
+}
+
+export interface ResolvedFn<T> {
+    (val: T): T | Promise<T>
+}
+
+export interface RejectedFn {
+    (error: any): any
 }
