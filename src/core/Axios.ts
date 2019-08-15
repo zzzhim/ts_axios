@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-04 22:58:11
- * @LastEditTime: 2019-08-05 23:20:59
+ * @LastEditTime: 2019-08-13 22:27:42
  * @LastEditors: Please set LastEditors
  */
 import {
@@ -27,9 +27,11 @@ interface PromiseChain<T> {
 }
 
 export default class Axios {
+    defaults: AxiosRequestConfig
     interceptors: Interceptors
 
-    constructor() {
+    constructor(initConfig: AxiosRequestConfig) {
+        this.defaults = initConfig
         // 初始化
         this.interceptors = {
             request: new InterceptorManager<AxiosRequestConfig>(),

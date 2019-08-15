@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-07-17 23:11:44
- * @LastEditTime: 2019-08-05 23:34:41
+ * @LastEditTime: 2019-08-13 22:27:47
  * @LastEditors: Please set LastEditors
  */
 export type Method =
@@ -51,6 +51,8 @@ export interface AxiosError extends Error {
 }
 
 export interface Axios {
+    defaults: AxiosRequestConfig
+
     interceptors: {
         request: AxiosInterceptorManager<AxiosRequestConfig>
         response: AxiosInterceptorManager<AxiosResponse>
