@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-07-17 23:11:44
- * @LastEditTime: 2019-08-13 22:27:47
+ * @LastEditTime: 2019-08-15 22:26:51
  * @LastEditors: Please set LastEditors
  */
 export type Method =
@@ -29,6 +29,8 @@ export interface AxiosRequestConfig {
     headers?: any
     responseType?: XMLHttpRequestResponseType
     timeout?: number
+
+    [propName: string]: any
 }
 
 export interface AxiosResponse<T = any> {
